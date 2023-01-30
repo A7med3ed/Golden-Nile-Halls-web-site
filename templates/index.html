@@ -1,0 +1,379 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static  'css/styles.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static  'css/responsive.css'%}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css'%} "
+    />
+    <link rel="shortcut icon" href="{% static  'img/Screenshot_2022-07-23_181732_6X-removebg-preview.png'%}">
+  </head>
+
+  <body>
+    <div class="content">
+      <!--start of nav-->
+ <nav class="navbar">
+  
+  <ul class="container">
+    
+
+    <li>
+      <a href="{% url 'home' %}" class="btn btn-1"
+        ><svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%" />
+        </svg>
+
+        <i class="fa fa-home" aria-hidden="true"></i> Home
+      </a>
+    </li>
+
+    <li>
+      <a href="#targate" class="btn btn-1"
+        ><svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%" />
+        </svg>
+        <i class="fa fa-question-circle" aria-hidden="true"></i> About Halls
+      </a>
+    </li>
+
+    <li>
+      <a href="{% url 'home' %}" 
+        ><img
+          src="{% static 'img/Screenshot_2022-07-23_181732_6X-removebg-preview.png' %}"
+          alt=""
+      /></a>
+    </li>
+
+    <li>
+      <a href="#footer" class="btn btn-1"
+        ><svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%" />
+        </svg>
+        <i class="fa fa-info-circle" aria-hidden="true"></i> contact_info
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.google.com/maps/dir/30.0839459,31.3198485/30.0085961,31.2187403/@30.0356162,31.3376082,12z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0" target="_blank" class="btn btn-1"><svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+        </svg>
+        <i class="fa fa-globe" aria-hidden="true"></i>  Location </i></a>
+  </li>
+  {% if user.is_authenticated %}
+    <li>
+      <a href="{% url 'dashboard' %}"  class="btn btn-1"><svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+        </svg>
+        <i class="fa fa-user" aria-hidden="true"></i>  Dashboard </i></a>
+    </li>
+  {% endif %}
+  </ul>
+</nav>
+  <!--end of nav-->
+    
+
+      <!-- start of first section -->
+      <div class="intro">
+        <div class="overlay"></div>
+        <div class="intro-txt">
+          <h2 class="typing-demo">GOLDN NILE HALLS</h2>
+          <h4>قاعات لتنظيم حفلات الزفاف والخطوبة</h4>
+          <h4>وأخرى لتنظيم أعياد الميلاد و السبوع والندوات</h4>
+          <h4>والمؤتمرات بخدمات فندقية عالية الجودة</h4>
+          <h4>بالمركز الاجتماعي لجامعة القاهرة</h4>
+        </div>
+      </div>
+      <!--end of first section-->
+
+      <!--start of second section-->
+
+      <div class="second-section">
+        <div class="flag">
+          <p>" We <span>Create</span> For Your <span>Happiness</span> "</p>
+        </div>
+
+        <div class="row text-center">
+          <div class="col-sm-3">
+            <div class="thumbnail">
+              <img
+                src="{% static 'img/lotus theme.jpg'%}"
+                alt="lotus"
+                width="400"
+                height="300"
+              />
+              <p class="name"><strong>El Lotus Hall</strong></p>
+
+              <a
+                class="btn"
+                id="b"
+                href="{% url 'book' %}"
+              >
+                <i class="fa fa-ticket" aria-hidden="true"></i> Book the Hall
+              </a>
+              <a
+                class="btn"
+                href="{% url 'lotus' %}"
+                id="u"
+                id="b" >
+                <i class="fa fa-book" aria-hidden="true"></i> Details
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="thumbnail">
+              <img
+                src="{% static 'img/Goldn theme.jpg'%}"
+                alt="Goldn nile"
+                width="400"
+                height="300"
+              />
+              <p class="name"><strong>Goldn Nile Hall</strong></p>
+
+              <a
+                class="btn"
+                id="o"
+                id="b"
+                href="{% url 'book' %}"
+              >
+                <i class="fa fa-ticket" aria-hidden="true"></i> Book the Hall
+              </a>
+              <a
+                class="btn"
+                id="t"
+                href="{% url 'goldn' %}"
+              >
+                <i class="fa fa-book" aria-hidden="true"></i> Details
+              </a>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="thumbnail">
+              <img
+                src="{% static 'img/horus thumbnail.jpeg'%}"
+                alt="Horus"
+                width="400"
+                height="200"
+              />
+              <p class="name"><strong>Horus Hall</strong></p>
+
+              <a
+                class="btn"
+                id="a"
+                id="b"
+                href="{% url 'book' %}"
+              >
+                <i class="fa fa-ticket" aria-hidden="true"></i> Book the Hall
+              </a>
+
+              <a
+                class="btn"
+                id="n"
+                href="{% url 'horus' %}"
+              >
+                <i class="fa fa-book" aria-hidden="true"></i> Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--end of second section-->
+
+      <!--start of third section-->
+
+      <div class="third-section" id="targate">
+        <!-- start of carousel-->
+        <div class="carousel">
+          <!--nav of arows-->
+          <div class="carousel__nav">
+            <span id="moveLeft" class="carousel__arrow">
+              <svg
+                class="carousel__icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"
+                ></path>
+              </svg>
+            </span>
+            <span id="moveRight" class="carousel__arrow">
+              <svg
+                class="carousel__icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <!--end of nav-->
+
+          <!--first img-->
+          <div class="carousel-item carousel-item--1">
+            <div class="carousel-item__image"></div>
+            <div class="carousel-item__info">
+              <div class="carousel-item__container">
+                <h2 class="carousel-item__subtitle">The grand moment</h2>
+                <h1 class="carousel-item__title" style="color:#998100;">EL Lotus</h1>
+                <p class="carousel-item__description">
+                  El lotus is a Hall open air and in front of Nile directly with
+                  glowing look in morning and brighting look in night /
+                  <br>
+                   قاعة اللوتس هي قاعة مفتوحه تطل علي النيل مباشره مضيئه ليلا و نهارا
+                </p>
+                <a href="{% url 'lotus' %}" class="carousel-item__btn">Explore the Hall /<span style="letter-spacing: 0px;">اكتشاف اكثر</span></a>
+              </div>
+            </div>
+          </div>
+          <!--end-->
+
+          <!--second img-->
+          <div class="carousel-item carousel-item--2">
+            <div class="carousel-item__image"></div>
+            <div class="carousel-item__info">
+              <div class="carousel-item__container">
+                <h2 class="carousel-item__subtitle" >The grand moment</h2>
+                <h1 class="carousel-item__title" style="color:#998100;">GOLDN NILE</h1>
+                <p class="carousel-item__description">
+                  the royal of black with glowing of lights in front of Nile
+                  directly with the magic of night in GOLDN NILE open air Hall /
+                  <br>
+عظمة الليل مع الانوار المضيئه امام النيل مباشره في قاعة جولدن نايل المفتوحه
+
+                </p>
+                <a href="{% url 'goldn' %}" class="carousel-item__btn">Explore the Hall /<span style="letter-spacing: 0px;">اكتشاف اكثر</span></a>
+              </div>
+            </div>
+          </div>
+          <!--end-->
+
+          <!--third img-->
+          <div class="carousel-item carousel-item--3">
+            <div class="carousel-item__image"></div>
+            <div class="carousel-item__info">
+              <div class="carousel-item__container">
+                <h2 class="carousel-item__subtitle">The grand moment</h2>
+                <h1 class="carousel-item__title" style="color:#998100;">Horus</h1>
+                <p class="carousel-item__description">
+                  in door Hall with glowing lights and air conditions /
+<br>قاعة حورس المغلقه في ثوبها الزاهي حيث تتواجد الانوار و مكيفات الهواء                </p>
+                <a href="{% url 'horus' %}" class="carousel-item__btn">Explore the Hall /<span style="letter-spacing: 0px;">اكتشاف اكثر</span></a></a>
+              </div>
+            </div>
+          </div>
+          <!--end-->
+        </div>
+      </div>
+
+      <!--end of third section-->
+
+      <!-- start of fourth section-->
+      <div class="fourth-section" id='footer'>
+        <div class="contact">
+          <div class="container flex">
+            <div class="contact-info flex">
+              <div class="col">
+                <h4>
+                  <i class="fa fa-info-circle" aria-hidden="true"></i> Our
+                  organization info:
+                </h4>
+                <ul>
+                  <li>
+                    We are a organization to organize weddings and partys with
+                    high quality service
+                  </li>
+                  <li>all terms and conditions applyed</li>
+                </ul>
+              </div>
+
+              <div class="col">
+                <h4>
+                  <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                  Contacts telephons:
+                </h4>
+                <ul>
+                  <li>01050335098 - 01050335097 <br />contact us Now!</li>
+                </ul>
+              </div>
+
+              <div class="col">
+                <h4>
+                  <i class="fa fa-envelope-o" aria-hidden="true"></i> Mail:
+                </h4>
+                <ul>
+                  <li>goldennile2021@gmail.com <br />contact us Now!</li>
+                </ul>
+              </div>
+
+              <div class="col" id="item">
+                <h4>
+                  <i class="fa fa-thumbs-up" aria-hidden="true"></i> follow Us:
+                </h4>
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com/Golden.nile2021" target="_blank">
+                      <i class="fa fa-facebook-official"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://api.whatsapp.com/send?phone=201050335098" target="_blank">
+                      <i class="fa fa-whatsapp"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/golden.nile1/"
+                      target="_blank"
+                    >
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <footer>
+              <h4>© 2022 GOLDN NILE - all rights reserved</h4>
+            </footer>
+          </div>
+        </div>
+        <!--end of fourth section-->
+      </div>
+    </div>
+
+    <div class="loading">
+      <img
+        class="logo"
+        src="{% static 'img/Screenshot_2022-07-23_181732_6X-removebg-preview.png'%}"
+      />
+
+      <p class="title">GOLDN NILE HALLS</p>
+    </div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/craousel.js' %}"></script>
+  </body>
+</html>
+<!--pip install Django-->
+<!-- env\Scripts\activate-->
+<!--python manage.py runserver-->

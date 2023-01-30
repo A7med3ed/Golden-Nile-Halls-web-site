@@ -1,0 +1,34 @@
+@media screen and (max-width:450px) {
+  .intro .intro-txt h2 {
+    font-size: 25pt;
+  }
+  
+  .intro .intro-txt h4{
+    
+    font-size: 15pt;
+
+  }
+  .carousel-item__title {
+    font-size:20pt
+  }
+
+  .carousel-item__description {
+    font-size: 10px;
+    margin: 0;
+    
+  }
+  .carousel-item__btn {
+    font-size: 9px;
+  }
+  .contact .container .contact-info {
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width:650px) {
+  .carousel {
+    width: 600px;
+    height: 400px;
+  }
+}

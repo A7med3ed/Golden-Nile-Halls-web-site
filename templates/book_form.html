@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Booking</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/book_form.css'%}" />
+<link rel="stylesheet" href="{% static 'css/normalize.css'%}">
+</head>
+
+<body>
+
+
+
+
+<div class="container ">
+
+
+
+<div class="Instractions">
+
+<!--english ins.-->    
+<h2 class="heading">Instractions</h2>
+<h3 class="sub-heading">After reservation</h3>
+<p>We will be contacted on the mobile as soon as possible</p>
+<p>and confirm your information and booking hall</p>
+<h3 class="sub-heading">In case the hall is pre-booked on your appointment</h3>
+<p>we will discuss with you </p>
+<p>have a nice day!</p>
+<!--end of english ins.-->
+
+
+
+<!--arabic ins.-->
+<h3 class="sub-heading">بعد تسجيل الحجز</h3>
+<p>سيتم التواصل علي المحمول في اقرب وقت</p>
+<p>و تأكيد البيانات و الحجز</p>
+<h3 class="sub-heading">في حاله ان القاعة محجوزه مسبقاً في موعدك</h3>
+<p>سيتم الاتفاق معك علي جميع التفاصيل </p>
+<p>! شكراً لك</p>
+<h4 class="phone">Call Us: 01050335098 </h4>
+<!--end of arabic ins.-->
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container-form ">
+<!--forms-->
+<form method="POST" >
+    {% csrf_token %}
+<h2>" Book Hall "</h2>
+<div>
+<p>Your Name /الاسم</p>
+<input type="text" name="customerName" placeholder="Your Name">
+</div>
+<div>
+<p>Your mobile /موبايل</p>
+<input type="text" name="customerMobile" placeholder="Your mobile">
+</div>
+<div>
+<p>Date / التاريخ</p>
+<input name="date" type="date">
+</div>
+<div>
+<p>Hall / القاعة</p>
+<select name="hall" id="Hall">
+    <option value="Goldn Nile">Goldn Nile</option>
+    <option value="El lotus">El lotus</option>
+    <option value="Hours">Hours</option>
+</select>
+</div>
+<div>
+<p>How many people? / عدد الاشخاص</p>
+<select name="peopleNumber" id="pepole">
+<option value="100">100 person</option>
+<option value="150">150 persons</option>
+<option value="200">200 persosn</option>
+<option value="250">250 persons</option>
+<option value="300">300 persons</option>
+<option value="600">600 persons</option>
+</select>
+</div>
+<button class="btn">Reserve /حجز</button>
+</form>
+<!--end of forms-->
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

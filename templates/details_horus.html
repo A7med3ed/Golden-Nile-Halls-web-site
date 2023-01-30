@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="{% static 'css/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css'%} "
+    />
+    <link rel="stylesheet" type="text/css" href="{% static  'css/details.css'%}" />
+    <link rel="shortcut icon" href="{% static  'img/Screenshot_2022-07-23_181732_6X-removebg-preview.png'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+
+
+<body id="details">
+
+
+<div class="nav-details">
+
+
+
+
+
+ <!--start of nav-->
+ <nav class="navbar">
+  <ul class="container">
+    <li>
+      <a href="{% url 'home' %}" class="btn btn-1"
+        ><svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%" />
+        </svg>
+
+        <i class="fa fa-home" aria-hidden="true"></i> Home
+      </a>
+    </li>
+
+   
+
+    <li>
+      <a href="{% url 'home' %}" 
+        ><img
+          src="{% static 'img/Screenshot_2022-07-23_181732_6X-removebg-preview.png' %}"
+          alt=""
+      /></a>
+    </li>
+
+    
+
+    <li>
+      <a href="https://www.google.com/maps/dir/30.0839459,31.3198485/30.0085961,31.2187403/@30.0356162,31.3376082,12z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0" target="_blank" class="btn btn-1"><svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+        </svg>
+        <i class="fa fa-globe" aria-hidden="true"></i>  Location </i></a>
+  </li>
+  {% if user.is_authenticated %}
+    <li>
+      <a href="{% url 'dashboard' %}"  class="btn btn-1"><svg>
+          <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+        </svg>
+        <i class="fa fa-user" aria-hidden="true"></i>  Dashboard </i></a>
+    </li>
+  {% endif %}
+  </ul>
+</nav>
+ 
+  <!--end of nav-->
+
+
+
+
+
+
+</div>
+
+
+
+<div class="Hall">
+<h1>" Horus "</h1>
+<p>عرض 100 فرد</p>
+
+<p>القاعة تسع (250) فرد</p>
+</div>
+<div class="chooses" style="margin-top:134px ;">
+<ul class="tilesWrap" >
+
+	<li style="margin-top:-60px ;">
+		
+		<h3><i class="fa fa-check-circle" aria-hidden="true"></i>
+       الاساسيات</h3>
+<p>رسوم القاعة</p>
+
+<p>كوشة مودرن</p>
+
+<p>تربيزات زجاج حديثة</p>
+
+<p>دانس فلور</p>
+
+<p>اضاءة بلايت</p>
+
+<p>سنتر بيز</p>
+		
+   </li>
+
+
+
+
+
+
+<li>
+		
+		<h3><i class="fa fa-plus-square" aria-hidden="true"></i> اضافات</h3>
+
+<p>H.D فيديو</p>
+
+<p>Dj وحدة صوت</p>
+
+<p>زفة دمياطي</p>
+
+<p>فرقة فنون شعبية</p>
+
+
+
+<p>شو بابلز</p>
+
+
+
+<p>ميكسر</p>
+		
+</li>
+
+<li style="margin-top:-60px ;">
+		
+		<h3><i class="fa fa-picture-o" aria-hidden="true"></i> صور</h3>
+		<p>قاعة حورس</p>
+    <a href="#hiddenDiv"> <button id="trigger"><span> عرض</span></button></a>
+	</li>
+
+
+
+</ul>
+
+</div>
+
+
+
+
+
+
+<div id="hiddenDiv">
+  <h1>Images/الصور</h1>
+  <div id="hiddenDivInner">
+    <div class="flexslider">
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+      
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="{% static 'img/hours_img/WhatsApp Image 2022-08-13 at 15.52.55 (1).jpeg' %}"style="width:100%;" >
+          </div>
+      
+          <div class="item">
+            <img src="{% static 'img/hours_img/WhatsApp Image 2022-08-13 at 15.52.55 (2).jpeg' %}" style="width:100%;">
+          </div>
+      
+          <div class="item">
+            <img src="{% static 'img/hours_img/WhatsApp Image 2022-08-13 at 15.52.55.jpeg' %}" style="width:100%;">
+          </div>
+       
+    </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>

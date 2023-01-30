@@ -1,0 +1,115 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static  'css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/constants.css'%}">
+  <link rel="stylesheet" href="{% static 'css/normalize.css'%}">
+  <link rel="stylesheet" href="{% static 'css/main.css'%}">
+  <link rel="stylesheet" href="{% static 'css/dashboard.css'%}">
+  <link rel="stylesheet" href="{% static 'css/addUser.css'%}">
+
+  <title>Dashboard</title>
+</head>
+
+<body>
+
+  <!-- content -->
+  <div class="parent">
+
+    <aside class="admin-panel">
+      <div class="admin-info">
+        <h3><i class="fa-solid fa-user"></i></h3>
+        <h3>{{user.username}}</h3>
+      </div>
+
+      <div class="admin-options">
+        <div class="option">
+          <a href="{% url "home" %}" id="dashborad" class="btn btn2"><i class="fa-solid fa-house"></i> Home</a>
+        </div>
+
+        <div class="option">
+          <a href="{% url 'logout' %}" class="btn btn2"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="dashboard">
+
+      
+      <h1 class="header typing-demo">Welcome, {{user.username}}</h1>
+      <div class="dashboard-data flex">
+
+        <div class="card users">
+
+          <div class="card-head">
+            <h1 class="count">
+              {{reservations.count}}
+            </h1>
+          </div>
+
+          <div class="card-body flex">
+            <h2>عدد الحجوزات <i class="fa-solid fa-users"></i></h2>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="complain-table">
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr>
+                <th>اسم العميل</th>
+                <th>الرقم</th>
+                <th>القاعة</th>
+                <th>عدد الاشخاص</th>
+                <th> التاريخ (YY-MM-DD)</th>
+                <th> خيارات</th>
+
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              {% for res in reservations %}
+
+              <tr>
+                <td>{{res.customerName}}</td>
+                <td>{{res.customerMobile}}</td>
+                <td>{{res.hall}}</td>
+                <td>{{res.peopleNumber}}</td>
+                <td>{{res.date}}</td>
+                <td>
+                  <a href="{% url 'approve' res.id %}" style="color:green;"> <i class="fa-solid fa-check" aria-hidden="true"></i></a>
+                  <a href="{% url 'delete' res.id %}"> <i class="fa-solid fa-trash" aria-hidden="true"></i></a>
+                </td>
+              </tr>
+
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+      </section>
+
+
+
+    </main>
+  </div>
+
+
+
+  <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
+  <!-- <script src="../js/intro.js"></script> -->
+  <script src="{% static 'js/dashboard.js'%}"></script>
+</body>
+
+</html>

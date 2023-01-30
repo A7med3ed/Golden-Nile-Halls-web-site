@@ -1,0 +1,150 @@
+/*body*/
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    
+    }
+
+/*end of body*/
+
+
+/*scrollbar color*/
+    ::-webkit-scrollbar {
+        width: 15px;
+      }
+      
+    
+        ::-webkit-scrollbar-track {
+        background: silver;
+        
+      }
+      
+  
+      
+        ::-webkit-scrollbar-thumb {
+          background:#998100;
+          
+      }
+      
+        
+        ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, .95) ;
+      }
+      /*end of scrollbar*/
+
+
+
+/*start  of form*/
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:var(--color2);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:var(--color2);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color:var(--color2);
+}
+
+ .container {
+        background-color: #998100;
+        margin:0px ;
+        box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
+        }
+
+
+
+
+
+.Instractions {
+            background-color: rgba(0, 0, 0, .95);
+            padding: 30px;
+            outline: 3px dashed #998100;
+            outline-offset: -30px;
+            text-align: center;
+ }
+ 
+ 
+ 
+ .heading {
+                font-size: 35px;
+                text-transform: uppercase;
+}
+
+ .sub-heading {
+                color:#998100;
+                font-size: 30px;
+}
+
+
+.phone {
+                font-size: 20px;
+}
+
+             
+.container-form {
+                    color:#998100;
+                    background-color: rgba(0, 0, 0, .95);
+                    outline: 3px dashed #998100;
+                    outline-offset: -30px;
+                    text-align: center;
+                    padding: 50PX 0;
+}
+
+
+
+form p {
+      font-weight: 600;
+      color: #998100;
+ }
+ 
+
+                      
+ 
+ input,select {
+                        padding: 10px 15px;
+                        background-color: transparent;
+                        border-width: 0.5px;
+                        border-color: silver;
+                        border-style:dotted;
+                        color: silver;
+                        }
+
+.btn {
+                            background-color:#998100;
+                            color: #fff;
+                            padding: 10px 20px;
+                            border: none;
+                            font-size: 18px;
+                            border-radius: 100px;
+                            -webkit-border-radius: 100px;
+                            -moz-border-radius: 100px;
+                            -ms-border-radius: 100px;
+                            -o-border-radius: 100px;
+                            box-shadow: 7px 10px 12px rgba(0, 0, 0, .1);
+                            cursor: pointer;
+                            transition: all .3s;
+                            -webkit-transition: all .3s;
+                            -moz-transition: all .3s;
+                            -ms-transition: all .3s;
+                            -o-transition: all .3s;
+                            margin-top: 30px;
+}
+
+
+.btn:hover {
+                            transform: scale(1.03);
+                            -webkit-transform: scale(1.03);
+                            -moz-transform: scale(1.03);
+                            -ms-transform: scale(1.03);
+                            -o-transform: scale(1.03);
+                            box-shadow: 10px 12px 15px rgba(0, 0, 0, .3);
+ }
+
+
+ /*end of form*/
